@@ -1,0 +1,25 @@
+.fea-head{
+    font-weight:700
+}
+.fea-link{
+    font-size:14px;
+}
+.fea-height{
+    width:100px;
+}
+.fea-categories{
+    width:45%;
+    height:190px;
+    background-color: #F5F5F5;
+    border:1px solid rgba(200,200,200,0.8);
+    padding-bottom:10px;
+}
+.fea-image{
+    width:80%;
+    margin-left:10%;
+    margin-right:10%;
+    height:70%;
+    margin-top:10%;
+    border:1px solid rgba(200,200,200,0.5)
+
+}

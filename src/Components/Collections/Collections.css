@@ -1,0 +1,14 @@
+.col-head{
+    font-weight:500
+}
+.col-link{
+    font-size:14px;
+}
+.col-img{
+    width:45%;
+}
+.col-flex-wrap{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
