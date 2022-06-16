@@ -1,4 +1,4 @@
-import "./app.css"
+import "./App.css"
 import Header from "./Components/Header/Header"
 import Slide from "./Components/Slide/Slide"
 import Rule from "./Components/Rule/Rule"
