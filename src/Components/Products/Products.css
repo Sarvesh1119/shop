@@ -1,0 +1,21 @@
+.img-height{
+    height:140px !important;
+}
+.bar-space{
+    padding-right:10px
+}
+.template{
+    margin-bottom: 50px;
+}
+@media screen and (min-width:540px){
+   
+}
+
+@media screen and (min-width:1200px){
+    .products{
+        width:67% !important
+    }
+    .img-height{
+        height:180px !important;
+    }
+}

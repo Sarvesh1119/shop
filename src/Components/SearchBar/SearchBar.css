@@ -1,0 +1,22 @@
+.search-input::-webkit-input-placeholder {
+    color:white !important
+}
+
+.search-input::-moz-placeholder {
+    color:white !important
+}
+
+.search-input::-ms-placeholder {
+    color:white !important
+}
+
+.search-input::placeholder {
+    color:white !important
+}
+
+.bg-color{
+    background-color:#182e49 !important
+}
+.search-input:focus{
+    box-shadow: none !important;
+}

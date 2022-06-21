@@ -1,13 +1,17 @@
-import React from 'react'
+import React,{useState} from 'react'
 import {Container,Row,Col} from "react-bootstrap"
-const MainHeader = () => {
+import "./MainHeader.css"
+
+const MainHeader = (props) => {
     return (
-        <Container fluid className="sticky-top">
-            <Row className="bg-primary py-2 d-flex justify-content-between">
+        <Container fluid className="fixed-top">
+            <Row className="py-2 d-flex justify-content-between bg-color">
                 <Col className="d-flex">
-                        <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-list" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-                        </svg>
+                        <div onClick={props.handleChange} className="list-icon">
+                            <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-list" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                            </svg>
+                        </div>
                        <div className="px-1 text-light">Menu</div>
                 </Col>
                 <Col className="d-flex justify-content-end">

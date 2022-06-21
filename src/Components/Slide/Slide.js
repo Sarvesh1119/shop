@@ -6,7 +6,7 @@ const Slide = () => {
     return (
        <Container fluid className="my-3">
             <Row>
-                <Col lg={9} className="mx-auto">
+                <Col lg={12} xl={8} className="mx-auto base">
                     <Carousel>
                         <Carousel.Item>
                             <img 

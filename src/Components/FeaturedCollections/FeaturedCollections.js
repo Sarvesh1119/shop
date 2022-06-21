@@ -4,7 +4,8 @@ import {Container,Row,Col} from "react-bootstrap"
 
 const FeaturedCollections = () => {
     return (
-        <Container>
+        <Col xl={8} className="mx-auto">
+        <Container className="base">
             <Row>
                 <Col className="h3 fea-head">
                     SHOP FOR
@@ -31,6 +32,7 @@ const FeaturedCollections = () => {
                 </Col>
             </Row>
         </Container>
+        </Col>
     )
 }
 export default FeaturedCollections

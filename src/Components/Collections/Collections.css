@@ -5,10 +5,30 @@
     font-size:14px;
 }
 .col-img{
-    width:45%;
 }
 .col-flex-wrap{
     display:flex;
     flex-wrap: wrap;
     justify-content: space-between;
+}
+.col-image{
+}
+@media screen and (min-width:768px){
+    .col-image{
+        height:120px;
+    }
+}
+@media screen and (min-width:992px){
+    .col-image{
+        height:160px;
+    } 
+}
+@media screen and (min-width:1200px){
+    .col-image{
+        height:160px;
+    } 
+    .base{
+        padding-left:0;
+        padding-right:0;
+    }
 }

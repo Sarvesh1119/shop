@@ -2,6 +2,21 @@
     height:250px;
 }
 
-@media screen and (min-width:576px){
+@media screen and (min-width:768px){
+    .slide-image{
+        height:430px;
+    }
+}
 
+@media screen and (min-width:992px){
+    .slide-image{
+        height:450px;
+    }
+}
+@media screen and (min-width:1200px){
+    .base{
+        padding-left:0;
+        padding-right:0;
+
+    }
 }

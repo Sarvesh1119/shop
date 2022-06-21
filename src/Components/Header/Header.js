@@ -7,7 +7,7 @@ const Header = () => {
     return (
         <Container fluid>
             <Row>
-                <Col className="bg-primary text-light  text-center">
+                <Col className="bg-color text-light  text-center">
                     <div className="app-name">
                         SHOPPING APP
                     </div>

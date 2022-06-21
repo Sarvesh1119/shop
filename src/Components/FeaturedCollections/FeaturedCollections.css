@@ -23,3 +23,47 @@
     border:1px solid rgba(200,200,200,0.5)
 
 }
+
+@media screen and (min-width:768px){
+    .fea-categories{
+        width:47%;
+        height:300px;
+        background-color: #F5F5F5;
+        border:1px solid rgba(200,200,200,0.8);
+        padding-bottom:10px;
+    }
+    .fea-image{
+        width:80%;
+        margin-left:10%;
+        margin-right:10%;
+        height:75%;
+        margin-top:10%;
+        border:1px solid rgba(200,200,200,0.5)
+    
+    }
+}
+
+@media screen and (min-width:992px){
+    .fea-categories{
+        width:45%;
+        height:450px;
+        background-color: #F5F5F5;
+        border:1px solid rgba(200,200,200,0.8);
+        padding-bottom:10px;
+    }
+    .fea-image{
+        width:90%;
+        margin-left:05%;
+        margin-right:05%;
+        height:85%;
+        margin-top:5%;
+        border:1px solid rgba(200,200,200,0.5)
+    
+    }
+}
+@media screen and (min-width:1200px){
+    .base{
+        padding-left:0;
+        padding-right:0;
+    }
+}

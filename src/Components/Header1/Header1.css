@@ -1,0 +1,46 @@
+.head{
+    font-size:1.5rem;
+    font-weight:600;
+}
+.row-1{
+    width:68%
+}
+.form-color{
+    background-color:#0a1829 !important;
+    color:white;
+    outline:0 !important
+}
+.form-color:focus {
+    box-shadow: none !important;
+}
+  
+.form-color::-webkit-input-placeholder {
+    color:white !important
+}
+
+.form-color::-moz-placeholder {
+    color:white !important
+}
+
+.form-color::-ms-placeholder {
+    color:white !important
+}
+
+.form-color::placeholder {
+    color:white !important
+}
+.form-cart{
+    width:20px
+}
+.search-area{
+    margin-left:20%
+}
+.cart-area{
+    margin-right:2.5%
+}
+.bg-color{
+    background-color:#182e49;
+}
+.decoration{
+    text-decoration: none;
+}

@@ -3,13 +3,13 @@ import {Row,Col,Container} from "react-bootstrap"
 
 const Rule = () => {
     return (
-        <Container>
+   <Container>
             <Row>
-                <Col lg={9} className="mx-auto">
+                <Col lg={12} xl={9} className="mx-auto rule">
                     <hr/>
                 </Col>
             </Row>
-        </Container>
+        </Container>     
     )
 }
 

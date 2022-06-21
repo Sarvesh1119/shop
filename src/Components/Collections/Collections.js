@@ -26,7 +26,8 @@ const sampleCollections=[
 ]
 const Collections = () => {
     return (
-        <Container>
+        <Col xl={8} className="mx-auto">
+        <Container className="base">
             <Row>
                 <Col className="h3 col-head">
                 FEATURED COLLECTION
@@ -40,17 +41,18 @@ const Collections = () => {
                     </svg>    
                 </Col>
             </Row>
-            <Container>
+            <Container fluid="sm">
             <Row className="col-flex-wrap mt-3">
                 {sampleCollections.map(object=> 
-                <Col xs={5} className="p-0 col-img mb-5">
-                        <img className="img-fluid h-75" src={object["image"]} alt=""/>
+                <Col xs={5} sm={2} lg={2} xl={2} className="p-0 col-img mb-5">
+                        <img className="img-fluid col-image" src={object["image"]} alt=""/>
                         <div className="text-center text-primary">{object["title"]}</div>
                         <div className="text-center">{object["price"]}</div>
                 </Col>)}
             </Row>
             </Container>
         </Container>
+        </Col>
     )
 }
 export default Collections

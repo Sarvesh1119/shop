@@ -1,7 +1,10 @@
 .app-name{
-    margin-top:25px;
+    margin-top:55px;
     margin-bottom:25px;
     font-size:1.5rem
+}
+bg-color{
+    background-color:#182e49;
 }
 
 @media screen and (min-width:576px){
