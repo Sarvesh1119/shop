@@ -32,30 +32,20 @@ const Home = () => {
     groceries=products.filter(key=> key.category==="groceries")
     skincare=products.filter(key=> key.category==="skincare")
   }
-  console.log(products)
-  console.log(smartphones)
-  console.log(laptops) 
-  console.log(homeDecoration)
-  const handleCollection= (event) => {
-   
-  }
   return (
-    !showLaptops && !showSmartphones && !showSkincare ?
     <div className="App">
       <Container fluid Name="m-0 p-0">
              <Slide/>
               <Rule/>
               <FeaturedCollections/>
               <Rule/>
-              <Collections collection={laptops} showCollection={showLaptops} handleCollection={handleCollection}/>
+              <Collections collection={laptops} />
               <Rule/>
-              <Collections collection={smartphones} showCollection={showSmartphones} handleCollection={handleCollection}/>
+              <Collections collection={smartphones}/>
               <Rule/>
-              <Collections collection={skincare} showCollection={showSkincare} handleCollection={handleCollection}/>
+              <Collections collection={skincare}/>
       </Container>
     </div>
-    :
-    <CollectionPage list={showLaptops? laptops : showSmartphones? smartphones: showSkincare && skincare}/>
   );
 }
 

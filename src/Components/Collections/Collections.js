@@ -29,7 +29,7 @@ const sampleCollections=[
 const Collections = (props) => {
     const [coll,setColl]= useState(false)
     return (
-        <Col xl={8} className="mx-auto" id={props.collection[0].category==="laptops" ? "laptops" : "smartphones"}>
+        <Col xl={8} className="mx-auto" id={props.collection.length>0 && props.collection[0].category==="laptops" ? "laptops" : "smartphones"}>
         <Container className="base">
             <Row>
                 <Col className="h3 col-head">
