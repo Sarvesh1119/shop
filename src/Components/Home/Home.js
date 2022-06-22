@@ -10,21 +10,39 @@ import SearchBar from "../SearchBar/SearchBar"
 import List from "../List/List"
 import Header1 from "../Header1/Header1"
 import {Container} from "react-bootstrap"
+import {useSelector} from "react-redux"
 
 const Home = () => {
+  const products= useSelector(state=> state.products)
+  let smartphones=[]
+  let laptops=[]
+  let homeDecoration=[]
+  let groceries=[]
+  let skincare
+  if(products.length>0){
+    smartphones=products.filter(key=> key.category==="smartphones")
+    laptops=products.filter(key=> key.category==="laptops")
+    homeDecoration=products.filter(key=> key.category==="home-decoration")
+    groceries=products.filter(key=> key.category==="groceries")
+    skincare=products.filter(key=> key.category==="skincare")
+  }
+  console.log(products)
+  console.log(smartphones)
+  console.log(laptops) 
+  console.log(homeDecoration)
   return (
     <div className="App">
       <Container fluid Name="m-0 p-0">
              <Slide/>
               <Rule/>
+
               <FeaturedCollections/>
               <Rule/>
-              <Collections/>
+              <Collections collection={laptops}/>
               <Rule/>
-              <Collections/>
+              <Collections collection={smartphones}/>
               <Rule/>
-              <Collections/>
-              <Rule/>
+              <Collections collection={skincare}/>
       </Container>
     </div>
   );

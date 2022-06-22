@@ -24,13 +24,14 @@ const sampleCollections=[
         price:"$19.99"
     }
 ]
-const Collections = () => {
+const Collections = (props) => {
+    console.log(props.collection,1)
     return (
         <Col xl={8} className="mx-auto">
         <Container className="base">
             <Row>
                 <Col className="h3 col-head">
-                FEATURED COLLECTION
+                {props.collection.length>0 ? props.collection[0].category.toUpperCase() : "FEATURED COLLECTION"} 
                 </Col>
             </Row>
             <Row>
@@ -43,12 +44,19 @@ const Collections = () => {
             </Row>
             <Container fluid="sm">
             <Row className="col-flex-wrap mt-3">
-                {sampleCollections.map(object=> 
+                {props.collection.length>0 ?props.collection.slice(0,4).map(object=>
                 <Col xs={5} sm={2} lg={2} xl={2} className="p-0 col-img mb-5">
-                        <img className="img-fluid col-image" src={object["image"]} alt=""/>
+                        <img className="img-fluid col-image" src={object["thumbnail"]} alt=""/>
                         <div className="text-center text-primary">{object["title"]}</div>
-                        <div className="text-center">{object["price"]}</div>
-                </Col>)}
+                        <div className="text-center">${object["price"]}</div>
+                </Col>)
+                :
+                sampleCollections.map(object=>
+                    <Col xs={5} sm={2} lg={2} xl={2} className="p-0 col-img mb-5">
+                            <img className="img-fluid col-image img-fluid" src={object["image"]} alt=""/>
+                            <div className="text-center text-primary">{object["title"]}</div>
+                            <div className="text-center">{object["price"]}</div>
+                    </Col>)}
             </Row>
             </Container>
         </Container>
