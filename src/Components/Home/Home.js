@@ -18,7 +18,8 @@ const Home = () => {
   let laptops=[]
   let homeDecoration=[]
   let groceries=[]
-  let skincare
+  let skincare=[]
+  console.log(products)
   if(products.length>0){
     smartphones=products.filter(key=> key.category==="smartphones")
     laptops=products.filter(key=> key.category==="laptops")
