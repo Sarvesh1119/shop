@@ -4,8 +4,12 @@
 .col-link{
     font-size:14px;
 }
+.text{
+    text-decoration: none;
+}
 .col-img{
     height:140px;
+    margin-bottom:50px;
 }
 .col-flex-wrap{
     display:flex;
@@ -16,8 +20,9 @@
 }
 @media screen and (min-width:768px){
     .col-image{
-        height:120px;
-    }
+        min-height:140px;
+        max-height:150px;
+    } 
 }
 @media screen and (min-width:992px){
     .col-image{
@@ -26,7 +31,8 @@
 }
 @media screen and (min-width:1200px){
     .col-image{
-        height:160px;
+        min-height:150px;
+        max-height:160px;
     } 
     .base{
         padding-left:0;

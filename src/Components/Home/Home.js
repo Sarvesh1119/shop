@@ -11,8 +11,13 @@ import List from "../List/List"
 import Header1 from "../Header1/Header1"
 import {Container} from "react-bootstrap"
 import {useSelector} from "react-redux"
+import CollectionPage from '../CollectionPage/CollectionPage'
 
 const Home = () => {
+  const [showLaptops,setShowLaptops]= useState(false)
+  const [showSmartphones,setShowSmartphones]= useState(false)
+  const [showSkincare,setShowSkincare]= useState(false)
+
   const products= useSelector(state=> state.products)
   let smartphones=[]
   let laptops=[]
@@ -31,21 +36,26 @@ const Home = () => {
   console.log(smartphones)
   console.log(laptops) 
   console.log(homeDecoration)
+  const handleCollection= (event) => {
+   
+  }
   return (
+    !showLaptops && !showSmartphones && !showSkincare ?
     <div className="App">
       <Container fluid Name="m-0 p-0">
              <Slide/>
               <Rule/>
-
               <FeaturedCollections/>
               <Rule/>
-              <Collections collection={laptops}/>
+              <Collections collection={laptops} showCollection={showLaptops} handleCollection={handleCollection}/>
               <Rule/>
-              <Collections collection={smartphones}/>
+              <Collections collection={smartphones} showCollection={showSmartphones} handleCollection={handleCollection}/>
               <Rule/>
-              <Collections collection={skincare}/>
+              <Collections collection={skincare} showCollection={showSkincare} handleCollection={handleCollection}/>
       </Container>
     </div>
+    :
+    <CollectionPage list={showLaptops? laptops : showSmartphones? smartphones: showSkincare && skincare}/>
   );
 }
 
