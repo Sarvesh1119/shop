@@ -10,6 +10,7 @@ import Products from "./Components/Products/Products"
 import Header1 from "./Components/Header1/Header1"
 import Contact from "./Components/Contact/Contact"
 import CollectionPage from "./Components/CollectionPage/CollectionPage"
+import Checkout from "./Components/Checkout/Checkout"
 import {useDispatch} from "react-redux"
 
 function App() {
@@ -54,6 +55,7 @@ function App() {
         <Route path="Products" element={<Products/>}/>
         <Route path="Contact" element={<Contact/>}/>
         <Route path="CollectionPage" element={<CollectionPage/>}/>
+        <Route path="checkout" element={<Checkout/>}/>
       </Routes>}
     </div>
     </div>

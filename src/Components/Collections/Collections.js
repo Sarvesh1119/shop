@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import {Container,Row,Col} from "react-bootstrap"
 import "./Collections.css" 
 import {Link} from "react-router-dom"
-import CollectionPage from '../CollectionPage/CollectionPage'
+import ProductView from '../ProductView/ProductView'
 
 const sampleCollections=[
     {
@@ -26,6 +26,7 @@ const sampleCollections=[
         price:"$19.99"
     }
 ]
+
 const Collections = (props) => {
     const [coll,setColl]= useState(false)
     return (
@@ -56,14 +57,14 @@ const Collections = (props) => {
             <Container fluid="sm">
             <Row className="col-flex-wrap mt-3">
                 {props.collection.length>0 ? !coll? props.collection.slice(0,4).map(object=>
-                <Col xs={5} sm={2} lg={2} xl={2} className="p-0 pb-4">
+                <Col xs={5} sm={2} lg={2} xl={2} className="p-0 pb-4" onClick={()=>props.handleProductView(object)}>
                         <img className=" img-thumbnail col-image" src={object["thumbnail"]} alt=""/>
                         <div className="text-center text-primary">{object["title"]}</div>
                         <div className="text-center">${object["price"]}</div>
                 </Col>) 
                 :
                 props.collection.map(object=>
-                    <Col xs={6} sm={3} lg={3} xl={3} className="p-0 pb-4 pe-4">
+                    <Col xs={6} sm={3} lg={3} xl={3} className="p-0 pb-4 pe-4" onClick={()=>props.handleProductView(object)}>
                             <img className="img-thumbnail col-image" src={object["thumbnail"]} alt=""/>
                             <div className="text-center text-primary">{object["title"]}</div>
                             <div className="text-center">${object["price"]}</div>

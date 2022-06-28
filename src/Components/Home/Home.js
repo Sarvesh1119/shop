@@ -1,23 +1,16 @@
-import React, {useState,useEffect} from 'react'
+import React, {useState} from 'react'
 import "./Home.css"
-import Header from "../Header/Header"
 import Slide from "../Slide/Slide"
 import Rule from "../Rule/Rule"
 import FeaturedCollections from "../FeaturedCollections/FeaturedCollections"
 import Collections from "../Collections/Collections"
-import MainHeader from "../MainHeader/MainHeader"
-import SearchBar from "../SearchBar/SearchBar"
-import List from "../List/List"
-import Header1 from "../Header1/Header1"
 import {Container} from "react-bootstrap"
 import {useSelector} from "react-redux"
-import CollectionPage from '../CollectionPage/CollectionPage'
+import ProductView from "../ProductView/ProductView"
 
 const Home = () => {
-  const [showLaptops,setShowLaptops]= useState(false)
-  const [showSmartphones,setShowSmartphones]= useState(false)
-  const [showSkincare,setShowSkincare]= useState(false)
-
+  const [showProduct,setShowProduct]= useState(false)
+  const [object,setObject]=useState({}) 
   const products= useSelector(state=> state.products)
   let smartphones=[]
   let laptops=[]
@@ -32,18 +25,35 @@ const Home = () => {
     groceries=products.filter(key=> key.category==="groceries")
     skincare=products.filter(key=> key.category==="skincare")
   }
+  const handleProductView= (object1) => {
+    setObject(object1)
+    setShowProduct(true)
+  }
+  const hideProductView= () => {
+    setObject({})
+    setShowProduct(false)
+  }
   return (
+  
     <div className="App">
       <Container fluid Name="m-0 p-0">
+      {!showProduct ? 
+      <div>
              <Slide/>
               <Rule/>
               <FeaturedCollections/>
               <Rule/>
-              <Collections collection={laptops} />
+              <Collections collection={laptops} handleProductView={handleProductView}/>
               <Rule/>
-              <Collections collection={smartphones}/>
+              <Collections collection={smartphones} handleProductView={handleProductView}/>
               <Rule/>
-              <Collections collection={skincare}/>
+              <Collections collection={skincare} handleProductView={handleProductView}/>
+      </div>
+      :
+      <div className="width mx-auto">
+          <ProductView object={object} hideProductView={hideProductView} title="Home"/>
+      </div>
+      }
       </Container>
     </div>
   );

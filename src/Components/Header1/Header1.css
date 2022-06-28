@@ -8,7 +8,8 @@
 .form-color{
     background-color:#0a1829 !important;
     color:white;
-    outline:0 !important
+    outline:0 !important;
+    position:relative !important;
 }
 .form-color:focus {
     box-shadow: none !important;
@@ -43,4 +44,25 @@
 }
 .decoration{
     text-decoration: none;
+}
+.modal-margin{
+    margin-top:10px;
+}
+.border-radius-0 div {
+    border-radius: 0px !important;
+  }
+.cart-image{
+    min-height:80px;
+    max-height:90px
+}
+.rounded-element{
+    position:relative !important;
+    height:23px;
+    width:23px;
+    border-radius:50%;
+    background-color:red;
+    color:white;
+    text-align:center;
+    margin-left:-27px;
+    margin-top:12px;
 }

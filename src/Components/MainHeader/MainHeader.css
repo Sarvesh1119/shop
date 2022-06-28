@@ -4,3 +4,22 @@
 .bg-color{
     background-color:#182e49;
 }
+.cart-img{
+    min-height:60px; 
+    max-height:70px;
+}
+.element{
+    position:relative !important;
+}
+.round-element{
+    height:20px;
+    width:20px;
+    color:white;
+    border-radius:50%;
+    background-color:red;
+    text-align:center;
+}
+.decoration{
+    text-decoration:none;
+    color:white;
+}

@@ -2,8 +2,12 @@ import React, {useEffect, useState} from 'react'
 import "./Products.css"
 import {Container,Row,Col,Form} from "react-bootstrap"
 import {useSelector, useDispatch} from "react-redux"
+import ProductView from "../ProductView/ProductView" 
 
-const Products = () => {
+const Products = (props) => {
+    const [key,setKey]= useState({})
+    const [showProduct,setShowProduct]= useState(false)
+    useEffect(() =>setShowProduct(false),[])
     const [grid,setGrid]= useState(true)
     const [row,setRow]= useState(false)
     const dispatch= useDispatch()
@@ -44,10 +48,20 @@ const Products = () => {
                 dispatch({type:"POST_PRODUCTS",payload:[...products.sort((a, b) => (a.rating > b.rating) ? -1 : 1)]})
             } 
     }
-    console.log(products)
-
+    const handleProductView = (key) => {
+        setKey(key)
+        console.log(key)
+        setShowProduct(true)
+    }
+    const hideProductView = () => {
+        setShowProduct(false)
+        setKey({})
+    }
+    console.log(products,showProduct)
     return (
         <Container fluid className="mx-auto products mt-2 text-small">
+            {!showProduct?
+            <div>
             <Row>
                 <div className="d-flex">
                     <div className="bar-space"><small>Home</small></div>
@@ -94,18 +108,18 @@ const Products = () => {
             </Row>
             {products.length > 0 && grid && !row &&
             <Row className="mt-3 d-flex flex-wrap">
-                {products.map(key=> key.id!=29 && key.id!=24 &&
-                <Col xs={6} sm={3} md={3} lg={3} xl={3} className="template">
-                    <img className="img-height mb-2 img-thumbnail" src={key.thumbnail}/>
+                {products.map(key=> key.id!==29 && key.id!==24 &&
+                <Col xs={6} sm={3} md={3} lg={3} xl={3} className="template" onClick={()=>handleProductView(key)}>
+                    <img className="img-height mb-2 img-thumbnail" src={key.thumbnail} alt=""/>
                     <small><div className="text-secondary mb-2">{key.title}</div></small>
                     <div className="h6">${key.price}</div>
                 </Col>)}
             </Row>}
             {products.length > 0 && row && !grid &&
-            products.map(key=> key.id!=29 && key.id!=24 &&
-                <Row className="d-flex mt-5">
+            products.map(key=> key.id!==29 && key.id!==24 &&
+                <Row className="d-flex mt-5" onClick={()=>handleProductView(key)}>
                     <Col className="">                   
-                        <img className="img-height mb-2 img-thumbnail" src={key.thumbnail}/>
+                        <img className="img-height mb-2 img-thumbnail" src={key.thumbnail} alt=""/>
                     </Col>
                     <Col className="text-center">
                         <Col className="fw-bold">
@@ -121,6 +135,9 @@ const Products = () => {
                 </Row>
                 )
             }
+            </div>
+            :
+            <ProductView object={key}  hideProductView={hideProductView} title="Products"/>}
         </Container>
     )
 }

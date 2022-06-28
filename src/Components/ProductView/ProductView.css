@@ -1,0 +1,22 @@
+.rating{
+    font-weight:600
+}
+.thumbnail-height{
+    height:150px !important;
+}
+.btn-width{
+    width:150px !important;
+}
+.font{
+    font-weight:600
+}
+@media screen and (min-width: 300px){
+    .thumbnail-height{
+        height:200px !important;
+    }
+}
+@media screen and (min-width: 700px){
+    .thumbnail-height{
+        height:250px !important;
+    }
+}
