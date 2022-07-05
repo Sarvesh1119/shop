@@ -44,6 +44,7 @@
 }
 .decoration{
     text-decoration: none;
+    color:white !important;
 }
 .modal-margin{
     margin-top:10px;
